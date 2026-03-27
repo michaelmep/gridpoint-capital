@@ -372,7 +372,7 @@ function Process() {
     {
       number: "01",
       title: "Site Identification & Acquisition",
-      description: "Our proprietary screening process evaluates thousands of grid-connected industrial assets annually. We target sites with 50–500+ MW of existing or recently retired capacity, clear title, and favorable zoning.",
+      description: "Our proprietary screening process evaluates thousands of grid-connected industrial assets annually. We target sites with 10–75 MW of existing or recently retired capacity, clear title, and favorable zoning.",
       image: PROCESS_POWER_IMG,
       tags: ["Grid Screening", "Title Review", "Utility Coordination"],
     },
