@@ -1,109 +1,57 @@
 /* ============================================================
    Maverick Energy Partners — Home Landing Page
-   Design: Dark Infrastructure / Cinematic Depth
-   Sections: Nav, Hero, Stats Bar, Value Prop, Process, Why Now,
-             Portfolio Criteria, Team, Contact CTA, Footer
+   Design: Institutional / Restrained
+   Sections: Hero, Credibility Strip, What We Do, Why Now,
+             Target Site Profile, How Maverick Creates Value,
+             Who We Work With, Positioning, About, Contact, Footer
    ============================================================ */
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import {
-  Zap, MapPin, Clock, Shield, TrendingUp, ChevronRight,
-  ArrowRight, Building2, Bolt, Layers, CheckCircle2,
-  BarChart3, Globe2, Mail, Menu, X
-} from "lucide-react";
+import { useState } from "react";
+import { Mail, Menu, X } from "lucide-react";
 
 // ─── Asset URLs ───────────────────────────────────────────────
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/logo-mep-2HQMdqhyo2JijDgTSHUCNe.webp";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/hero-main-3zsqBvvNTiztYStnLq5qgF.webp";
-const PROCESS_POWER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-power-k69UneSXEQcCTYTUP4pKcu.webp";
-const PROCESS_SITE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-site-atsUvUuMhp53sd6Rr5wbTy.webp";
-const PROCESS_DC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-datacenter-U2SdmxHcMtPkz8fXFMvkuh.webp";
-const ABSTRACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/abstract-grid-CMsbsrjzWQSVNyXZPFvMAR.webp";
-
-// ─── Animated Counter ─────────────────────────────────────────
-function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffix?: string; prefix?: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!inView) return;
-    let start = 0;
-    const duration = 1800;
-    const step = (timestamp: number) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * end));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [inView, end]);
-
-  return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
-}
 
 // ─── Navigation ───────────────────────────────────────────────
 function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
-
-  const navLinks = ["About", "Process", "Why Now", "Portfolio", "Contact"];
+  const navLinks = [
+    { label: "What We Do", href: "#what-we-do" },
+    { label: "Why Now", href: "#why-now" },
+    { label: "Process", href: "#process" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: scrolled
-          ? "oklch(0.13 0.025 250 / 92%)"
-          : "transparent",
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        borderBottom: scrolled ? "1px solid oklch(1 0 0 / 8%)" : "none",
-      }}
-    >
-      <div className="container flex items-center justify-between py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f5f2ed] border-b border-[#d8d3cc]">
+      <div className="max-w-4xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <img src={LOGO_URL} alt="MEP - Maverick Energy Partners" className="w-9 h-9" />
-          <span className="hidden sm:block font-bold text-lg" style={{ color: "oklch(0.95 0.005 250)", fontFamily: "'Sora', sans-serif" }}>Maverick Energy Partners</span>
+        <a href="#" className="flex items-center gap-3">
+          <img src={LOGO_URL} alt="MEP" className="w-8 h-8" />
+          <span className="hidden sm:block font-bold text-base tracking-wide text-[#1a1a18]" style={{ fontFamily: "'Playfair Display', serif" }}>
+            MAVERICK ENERGY PARTNERS
+          </span>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase().replace(" ", "-")}`}
-              className="text-sm font-medium transition-colors duration-200"
-              style={{ color: "oklch(0.72 0.015 250)", fontFamily: "'DM Sans', sans-serif" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.95 0.005 250)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.72 0.015 250)")}
+              key={link.label}
+              href={link.href}
+              className="text-sm text-[#4a4a46] hover:text-[#1a1a18] transition-colors duration-150"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#contact"
-            className="gp-btn-primary px-5 py-2.5 rounded-md text-sm font-semibold"
-          >
-            Inquire Now
-          </a>
-        </div>
-
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-[#1a1a18]"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -112,155 +60,84 @@ function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden px-4 pb-6 pt-2 space-y-4"
-          style={{ background: "oklch(0.13 0.025 250 / 96%)", borderTop: "1px solid oklch(1 0 0 / 8%)" }}>
+        <div className="md:hidden px-6 pb-5 pt-2 space-y-3 bg-[#f5f2ed] border-t border-[#d8d3cc]">
           {navLinks.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase().replace(" ", "-")}`}
-              className="block text-sm font-medium py-2"
-              style={{ color: "oklch(0.72 0.015 250)" }}
+              key={link.label}
+              href={link.href}
+              className="block text-sm text-[#4a4a46] hover:text-[#1a1a18] py-1.5"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
               onClick={() => setMobileOpen(false)}
             >
-              {link}
+              {link.label}
             </a>
           ))}
-          <a href="#contact" className="gp-btn-primary block text-center px-5 py-2.5 rounded-md text-sm font-semibold">
-            Inquire Now
-          </a>
         </div>
       )}
     </nav>
   );
 }
 
-// ─── Hero Section ─────────────────────────────────────────────
+// ─── Hero ─────────────────────────────────────────────────────
 function Hero() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 600], [0, 120]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  return (
+    <section className="pt-36 pb-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-xs font-semibold tracking-widest text-[#7a7a74] uppercase mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          Dallas, Texas · ERCOT
+        </p>
+        <h1
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1a1a18] leading-tight mb-8"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          ERCOT Power-Ready Site Acquisitions for Data Center Buyers
+        </h1>
+        <p className="text-lg text-[#4a4a46] leading-relaxed max-w-2xl mb-10" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          Maverick Energy Partners acquires stalled, distressed, and undercapitalized energy development sites in ERCOT and advances them into buyer-ready site packages for data center users, developers, and infrastructure investors.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#contact"
+            className="inline-block px-7 py-3 bg-[#1a1a18] text-[#f5f2ed] text-sm font-semibold tracking-wide hover:bg-[#2e2e2a] transition-colors duration-200"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Discuss Acquisition Criteria
+          </a>
+          <a
+            href="#contact"
+            className="inline-block px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-semibold tracking-wide hover:bg-[#1a1a18] hover:text-[#f5f2ed] transition-colors duration-200"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Contact Maverick
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Credibility Strip ────────────────────────────────────────
+function CredibilityStrip() {
+  const points = [
+    "ERCOT-Focused",
+    "Sub-75 MW Target Profile",
+    "Power-First Site Strategy",
+    "Utility and Development Diligence",
+    "Buyer-Aligned Advancement",
+  ];
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" id="about">
-      {/* Background image with parallax */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ y }}
-      >
-        <img
-          src={HERO_IMG}
-          alt="Electrical infrastructure transformed into data center"
-          className="w-full h-full object-cover"
-          style={{ transform: "scale(1.1)" }}
-        />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to right, oklch(0.13 0.025 250 / 90%) 0%, oklch(0.13 0.025 250 / 60%) 60%, oklch(0.13 0.025 250 / 30%) 100%)"
-          }} />
-        <div className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to top, oklch(0.13 0.025 250) 0%, transparent 40%)"
-          }} />
-      </motion.div>
-
-      {/* Content */}
-      <motion.div className="relative z-10 container py-32 pt-40" style={{ opacity }}>
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="gp-section-tag mb-6 inline-flex">
-              <span className="w-1.5 h-1.5 rounded-full bg-current" />
-              Electrical Infrastructure Repositioning
+    <section className="border-t border-b border-[#d8d3cc] py-6 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex flex-wrap gap-x-10 gap-y-3">
+          {points.map((point, i) => (
+            <span
+              key={i}
+              className="text-sm font-medium text-[#4a4a46] tracking-wide"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              {point}
             </span>
-          </motion.div>
-
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white mb-6"
-              style={{ fontFamily: "'Sora', sans-serif" }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-            >
-              Power Already{" "}
-              <span className="gp-text-gradient">In The Ground.</span>{" "}
-              <span style={{ color: "oklch(0.75 0.14 75)" }}>Ready To Build.</span>
-            </motion.h1>
-
-            <motion.p
-              className="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
-              style={{ color: "oklch(0.78 0.015 250)", fontFamily: "'DM Sans', sans-serif" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              Maverick Energy Partners identifies, acquires, and repositions existing electrical infrastructure — substations, retired power plants, and grid-connected industrial sites — into fully entitled, shovel-ready data center campuses. We compress years of development timelines into months.
-            </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            <a href="#contact" className="gp-btn-primary px-8 py-4 rounded-md text-base font-semibold flex items-center gap-2 justify-center">
-              Start a Conversation <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="#process" className="gp-btn-outline px-8 py-4 rounded-md text-base font-medium flex items-center gap-2 justify-center">
-              How It Works
-            </a>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-        style={{ opacity }}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <span className="gp-label">Scroll</span>
-        <div className="w-px h-8" style={{ background: "linear-gradient(to bottom, oklch(0.62 0.22 230), transparent)" }} />
-      </motion.div>
-    </section>
-  );
-}
-
-// ─── Stats Bar ────────────────────────────────────────────────
-function StatsBar() {
-  const stats = [
-    { value: 4200, suffix: "+ MW", label: "Pipeline Capacity" },
-    { value: 18, suffix: " Sites", label: "Active Portfolio" },
-    { value: 60, suffix: "%", label: "Faster Time-to-Power" },
-    { value: 3, suffix: "–7 Yrs", label: "Saved vs. Greenfield", isText: true },
-  ];
-
-  return (
-    <section className="relative z-10" style={{ background: "oklch(0.17 0.028 250)", borderTop: "1px solid oklch(1 0 0 / 8%)", borderBottom: "1px solid oklch(1 0 0 / 8%)" }}>
-      <div className="container py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x" style={{ "--tw-divide-opacity": "0.08" } as React.CSSProperties}>
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              className="flex flex-col items-center md:items-start md:px-10 gap-1"
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <div className="gp-stat-number text-3xl md:text-4xl font-bold text-white">
-                {stat.isText ? (
-                  <span>{stat.value}{stat.suffix}</span>
-                ) : (
-                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                )}
-              </div>
-              <div className="gp-label" style={{ fontFamily: "'DM Mono', monospace" }}>{stat.label}</div>
-            </motion.div>
           ))}
         </div>
       </div>
@@ -268,98 +145,68 @@ function StatsBar() {
   );
 }
 
-// ─── Value Proposition ────────────────────────────────────────
-function ValueProp() {
-  const pillars = [
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Existing Grid Connections",
-      description: "We source sites with live or recently retired high-voltage interconnects — eliminating the single longest lead-time item in data center development.",
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Fully Entitled & Permitted",
-      description: "Every site in our portfolio arrives with zoning approvals, environmental clearances, and utility agreements already in place. No permitting risk.",
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Months, Not Years",
-      description: "Traditional greenfield development takes 3–7 years to reach shovel-ready status. Our repositioned sites compress that to 6–18 months.",
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Strategic Site Selection",
-      description: "We target sites in constrained markets where power scarcity creates a durable competitive moat — maximizing long-term asset value.",
-    },
-    {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Institutional-Grade Returns",
-      description: "Our repositioning model captures the spread between distressed industrial asset pricing and premium data center land valuations.",
-    },
-    {
-      icon: <Globe2 className="w-6 h-6" />,
-      title: "National Coverage",
-      description: "Active pipeline across 14 states, with concentration in power-constrained markets including Northern Virginia, Texas, the Midwest, and Pacific Northwest.",
-    },
+// ─── Section Divider ──────────────────────────────────────────
+function Divider() {
+  return <div className="max-w-4xl mx-auto px-6"><hr className="border-[#d8d3cc]" /></div>;
+}
+
+// ─── What We Do ───────────────────────────────────────────────
+function WhatWeDo() {
+  return (
+    <section id="what-we-do" className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+          What We Do
+        </h2>
+        <p className="text-base text-[#4a4a46] leading-relaxed max-w-2xl" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          Maverick Energy Partners targets stalled, distressed, and undercapitalized energy development sites where meaningful grid, utility, land, or development work has already been completed or set in motion. We evaluate those sites for data center suitability, advance the most compelling opportunities through focused diligence and positioning work, and bring them to market as buyer-ready power site packages.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// ─── Why Now ──────────────────────────────────────────────────
+function WhyNow() {
+  return (
+    <section id="why-now" className="py-20 px-6 bg-[#eeebe5]">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+          Why Now
+        </h2>
+        <p className="text-base text-[#4a4a46] leading-relaxed max-w-2xl" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          In ERCOT, power access and development timing increasingly determine site value. Many energy development sites already contain years of utility coordination, study work, land control, or local development progress. Maverick focuses on identifying those positions and converting that momentum into buyer-ready opportunities for data center use.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// ─── Target Site Profile ──────────────────────────────────────
+function TargetSiteProfile() {
+  const criteria = [
+    "ERCOT locations with strong data center relevance",
+    "Sub-75 MW opportunities, generally where timing and study complexity remain manageable",
+    "Stalled, distressed, or undercapitalized energy development sites",
+    "Existing utility interface, study progress, or grid-related groundwork",
+    "Land control, permitting progress, entitlement work, or development momentum already in place",
+    "Situations where prior project work can create a faster path than raw land sourcing",
   ];
 
   return (
-    <section className="py-28" id="about" style={{ background: "oklch(0.13 0.025 250)" }}>
-      <div className="container">
-        <div className="mb-16">
-          <motion.span
-            className="gp-section-tag mb-4 inline-flex"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            Our Approach
-          </motion.span>
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white max-w-2xl leading-tight"
-            style={{ fontFamily: "'Sora', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            The Infrastructure Is Already There.{" "}
-            <span className="gp-text-gradient">Maverick Unlocks It.</span>
-          </motion.h2>
-          <motion.p
-            className="mt-5 text-lg max-w-2xl leading-relaxed"
-            style={{ color: "oklch(0.65 0.02 250)" }}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-          >
-            The data center industry faces a fundamental constraint: power. Grid interconnection queues stretch 5–10 years. Maverick Energy Partners' strategy bypasses this bottleneck entirely by repositioning sites that already have what developers need most.
-          </motion.p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {pillars.map((pillar, i) => (
-            <motion.div
-              key={i}
-              className="gp-card p-7"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-            >
-              <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-5"
-                style={{ background: "oklch(0.62 0.22 230 / 15%)", color: "oklch(0.62 0.22 230)" }}>
-                {pillar.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
-                {pillar.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "oklch(0.62 0.02 250)" }}>
-                {pillar.description}
+    <section id="target-profile" className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
+          Target Site Profile
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4">
+          {criteria.map((item, i) => (
+            <div key={i} className="flex gap-3 items-start">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1a1a18] flex-shrink-0" />
+              <p className="text-sm text-[#4a4a46] leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                {item}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -367,113 +214,58 @@ function ValueProp() {
   );
 }
 
-// ─── Process Section ──────────────────────────────────────────
+// ─── Process ──────────────────────────────────────────────────
 function Process() {
   const steps = [
     {
-      number: "01",
-      title: "Site Identification & Acquisition",
-      description: "Our proprietary screening process evaluates thousands of grid-connected industrial assets annually. We target sites with 10–75 MW of existing or recently retired capacity, clear title, and favorable zoning.",
-      image: PROCESS_POWER_IMG,
-      tags: ["Grid Screening", "Title Review", "Utility Coordination"],
+      label: "Source",
+      desc: "Identify distressed, stalled, and non-core energy development opportunities.",
     },
     {
-      number: "02",
-      title: "Repositioning & Entitlement",
-      description: "We execute the complex, time-intensive work: environmental remediation, utility agreements, zoning amendments, permitting, and infrastructure upgrades — delivering a fully de-risked, shovel-ready parcel.",
-      image: PROCESS_SITE_IMG,
-      tags: ["Environmental", "Permitting", "Utility Agreements"],
+      label: "Evaluate",
+      desc: "Assess power availability, timing, transferability, constraints, and buyer fit.",
     },
     {
-      number: "03",
-      title: "Delivery to Developers",
-      description: "Qualified hyperscalers, colocation operators, and institutional developers receive a turnkey site — power secured, permits in hand, ready for vertical construction within 90 days.",
-      image: PROCESS_DC_IMG,
-      tags: ["Hyperscale Ready", "Colo Ready", "Build-to-Suit"],
+      label: "Acquire / Structure",
+      desc: "Pursue land, lease, project-position, or other structured site exposure.",
+    },
+    {
+      label: "Advance",
+      desc: "Complete targeted diligence and positioning work to improve readiness and marketability.",
+    },
+    {
+      label: "Exit",
+      desc: "Deliver buyer-ready opportunities to data center developers, users, and capital partners.",
     },
   ];
 
   return (
-    <section className="py-28" id="process" style={{ background: "oklch(0.15 0.026 250)" }}>
-      <div className="container">
-        <div className="mb-16">
-          <motion.span
-            className="gp-section-tag mb-4 inline-flex"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            The Process
-          </motion.span>
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white max-w-2xl leading-tight"
-            style={{ fontFamily: "'Sora', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            From Stranded Asset to{" "}
-            <span className="gp-text-gradient">Shovel-Ready Site</span>
-          </motion.h2>
-        </div>
-
-        <div className="space-y-6">
+    <section id="process" className="py-20 px-6 bg-[#eeebe5]">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-12" style={{ fontFamily: "'Playfair Display', serif" }}>
+          How Maverick Creates Value
+        </h2>
+        <div className="flex flex-col md:flex-row gap-0">
           {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              className="gp-card overflow-hidden"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.6 }}
-            >
-              <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                {/* Image */}
-                <div className="lg:w-2/5 h-64 lg:h-auto relative overflow-hidden">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                  <div className="absolute inset-0"
-                    style={{ background: "linear-gradient(to right, transparent, oklch(0.17 0.028 250 / 20%))" }} />
+            <div key={i} className="flex-1 relative">
+              {/* Connector line */}
+              {i < steps.length - 1 && (
+                <div className="hidden md:block absolute top-5 left-full w-full h-px bg-[#c8c3bc] z-0" style={{ width: "calc(100% - 2rem)" }} />
+              )}
+              <div className="relative z-10 pr-6 pb-8 md:pb-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-10 h-10 rounded-full border border-[#1a1a18] flex items-center justify-center text-xs font-bold text-[#1a1a18] bg-[#eeebe5] flex-shrink-0" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm font-bold text-[#1a1a18] tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {step.label}
+                  </span>
                 </div>
-
-                {/* Content */}
-                <div className="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-start gap-5 mb-5">
-                    <span className="gp-stat-number text-5xl font-bold leading-none"
-                      style={{ color: "oklch(0.62 0.22 230 / 25%)" }}>
-                      {step.number}
-                    </span>
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
-                        {step.title}
-                      </h3>
-                      <p className="text-base leading-relaxed" style={{ color: "oklch(0.65 0.02 250)" }}>
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 ml-0 lg:ml-20">
-                    {step.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-3 py-1.5 rounded-full"
-                        style={{
-                          background: "oklch(0.62 0.22 230 / 10%)",
-                          border: "1px solid oklch(0.62 0.22 230 / 20%)",
-                          color: "oklch(0.72 0.2 225)",
-                          fontFamily: "'DM Mono', monospace",
-                          letterSpacing: "0.05em"
-                        }}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <p className="text-xs text-[#6a6a64] leading-relaxed pl-[52px]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  {step.desc}
+                </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -481,332 +273,30 @@ function Process() {
   );
 }
 
-// ─── Why Now Section ──────────────────────────────────────────
-function WhyNow() {
-  const drivers = [
-    {
-      icon: <BarChart3 className="w-5 h-5" />,
-      stat: "35 GW",
-      label: "New data center capacity needed by 2030",
-      source: "McKinsey, 2025",
-    },
-    {
-      icon: <Clock className="w-5 h-5" />,
-      stat: "5–10 Yrs",
-      label: "Typical grid interconnection queue wait time",
-      source: "FERC, 2025",
-    },
-    {
-      icon: <Building2 className="w-5 h-5" />,
-      stat: "$1M+",
-      label: "Per-acre premium for power-ready land",
-      source: "Bisnow, 2026",
-    },
-    {
-      icon: <Bolt className="w-5 h-5" />,
-      stat: "400+",
-      label: "Retired power plants with stranded grid connections",
-      source: "EIA, 2025",
-    },
-  ];
-
-  const points = [
-    "AI workloads are driving unprecedented, sustained electricity demand growth — far outpacing new grid capacity.",
-    "Hyperscalers and colocation operators are paying record premiums for sites with existing power infrastructure.",
-    "Regulatory and environmental permitting timelines have lengthened, making entitled brownfield sites exponentially more valuable.",
-    "Utility interconnection queues have reached historic lengths, creating a structural bottleneck that repositioned sites bypass entirely.",
-  ];
-
+// ─── Who We Work With ─────────────────────────────────────────
+function WhoWeWorkWith() {
   return (
-    <section className="py-28 relative overflow-hidden" id="why-now">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img src={ABSTRACT_BG} alt="" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0" style={{ background: "oklch(0.13 0.025 250 / 85%)" }} />
-      </div>
-
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text */}
+    <section id="who-we-work-with" className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
+          Who We Work With
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-12">
           <div>
-            <motion.span
-              className="gp-section-tag mb-4 inline-flex"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-current" />
-              Market Opportunity
-            </motion.span>
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
-            style={{ fontFamily: "'Sora', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            The Power Constraint Is{" "}
-            <span style={{ color: "oklch(0.75 0.14 75)" }}>Structural.</span> Maverick's{" "}
-            <span className="gp-text-gradient">Advantage Is Permanent.</span>
-          </motion.h2>
-            <div className="space-y-4">
-              {points.map((point, i) => (
-                <motion.div
-                  key={i}
-                  className="flex gap-3 items-start"
-                  initial={{ opacity: 0, x: -15 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.08 }}
-                >
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  <p className="text-sm leading-relaxed" style={{ color: "oklch(0.72 0.015 250)" }}>{point}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {drivers.map((d, i) => (
-              <motion.div
-                key={i}
-                className="gp-card p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15 + i * 0.1 }}
-              >
-                <div className="w-9 h-9 rounded-md flex items-center justify-center mb-4"
-                  style={{ background: "oklch(0.75 0.14 75 / 15%)", color: "oklch(0.75 0.14 75)" }}>
-                  {d.icon}
-                </div>
-                <div className="gp-stat-number text-3xl font-bold text-white mb-1">{d.stat}</div>
-                <p className="text-xs leading-snug mb-2" style={{ color: "oklch(0.65 0.02 250)" }}>{d.label}</p>
-                <span className="gp-label" style={{ color: "oklch(0.5 0.02 250)", fontSize: "0.6rem" }}>{d.source}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Portfolio Criteria ───────────────────────────────────────
-function PortfolioCriteria() {
-  const criteria = [
-    { label: "Power Capacity", value: "10 – 75 MW", icon: <Zap className="w-4 h-4" /> },
-    { label: "Site Acreage", value: "20 – 500+ acres", icon: <MapPin className="w-4 h-4" /> },
-    { label: "Voltage Level", value: "115 kV – 500 kV", icon: <Bolt className="w-4 h-4" /> },
-    { label: "Asset Types", value: "Power Plants, Substations, Industrial", icon: <Building2 className="w-4 h-4" /> },
-    { label: "Geography", value: "Constrained U.S. Markets", icon: <Globe2 className="w-4 h-4" /> },
-    { label: "Timeline to Delivery", value: "6 – 18 Months", icon: <Clock className="w-4 h-4" /> },
-  ];
-
-  const targetMarkets = [
-    "Northern Virginia / DC Metro",
-    "Dallas–Fort Worth, TX",
-    "Chicago Metro, IL",
-    "Phoenix, AZ",
-    "Atlanta, GA",
-    "Portland / Seattle, PNW",
-    "Columbus, OH",
-    "Kansas City, MO/KS",
-  ];
-
-  return (
-    <section className="py-28" id="portfolio" style={{ background: "oklch(0.13 0.025 250)" }}>
-      <div className="container">
-        <div className="mb-16">
-          <motion.span
-            className="gp-section-tag mb-4 inline-flex"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            Site Criteria
-          </motion.span>
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white max-w-2xl leading-tight"
-            style={{ fontFamily: "'Sora', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            What Maverick{" "}
-            <span className="gp-text-gradient">Acquires & Repositions</span>
-          </motion.h2>
-          <motion.p
-            className="mt-5 text-lg max-w-xl leading-relaxed"
-            style={{ color: "oklch(0.65 0.02 250)" }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-          >
-            Maverick is actively acquiring grid-connected industrial assets. If you own or represent a site that meets our criteria, we want to hear from you.
-          </motion.p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-10">
-          {/* Criteria table */}
-          <motion.div
-            className="gp-card overflow-hidden"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="px-7 py-5 border-b" style={{ borderColor: "oklch(1 0 0 / 8%)" }}>
-              <h3 className="font-semibold text-white" style={{ fontFamily: "'Sora', sans-serif" }}>Acquisition Criteria</h3>
-            </div>
-            <div className="divide-y" style={{ "--tw-divide-opacity": "1" } as React.CSSProperties}>
-              {criteria.map((c, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-center justify-between px-7 py-4"
-                  style={{ borderColor: "oklch(1 0 0 / 6%)" }}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                >
-                  <div className="flex items-center gap-3">
-                    <span style={{ color: "oklch(0.62 0.22 230)" }}>{c.icon}</span>
-                    <span className="text-sm" style={{ color: "oklch(0.65 0.02 250)" }}>{c.label}</span>
-                  </div>
-                  <span className="gp-stat-number text-sm font-medium text-white">{c.value}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Target markets */}
-          <motion.div
-            className="gp-card p-7"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="font-semibold text-white mb-5" style={{ fontFamily: "'Sora', sans-serif" }}>
-              Target Markets
+            <h3 className="text-sm font-bold text-[#1a1a18] uppercase tracking-widest mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              For Buyers and Capital Partners
             </h3>
-            <div className="grid grid-cols-2 gap-3">
-              {targetMarkets.map((market, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-center gap-2.5 py-3 px-4 rounded-md"
-                  style={{ background: "oklch(0.22 0.03 250)" }}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "oklch(0.62 0.22 230)" }} />
-                  <span className="text-sm" style={{ color: "oklch(0.78 0.015 250)" }}>{market}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-6 p-4 rounded-lg" style={{ background: "oklch(0.75 0.14 75 / 8%)", border: "1px solid oklch(0.75 0.14 75 / 20%)" }}>
-              <p className="text-sm" style={{ color: "oklch(0.85 0.12 75)" }}>
-                <strong>Actively acquiring.</strong> We close quickly with all-cash offers and can execute NDAs within 24 hours.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Differentiators ──────────────────────────────────────────
-function Differentiators() {
-  const items = [
-    {
-      title: "Proprietary Deal Flow",
-      description: "Our network of utility executives, industrial asset managers, and real estate brokers surfaces off-market opportunities before they reach the open market.",
-    },
-    {
-      title: "Deep Utility Relationships",
-      description: "Decades of combined experience working with transmission operators and distribution utilities enables us to navigate interconnection agreements that others cannot.",
-    },
-    {
-      title: "Integrated Execution",
-      description: "We manage every phase in-house: acquisition, environmental, permitting, utility coordination, and site preparation — eliminating the coordination risk of fragmented development.",
-    },
-    {
-      title: "Capital Efficiency",
-      description: "Our repositioning model generates premium returns by capturing the valuation spread between distressed industrial pricing and data center land values — without the construction risk of vertical development.",
-    },
-  ];
-
-  return (
-    <section className="py-28" style={{ background: "oklch(0.15 0.026 250)" }}>
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="gp-section-tag mb-4 inline-flex">
-              <span className="w-1.5 h-1.5 rounded-full bg-current" />
-              Competitive Edge
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "'Sora', sans-serif" }}>
-              Why Maverick{" "}
-              <span className="gp-text-gradient">Outperforms</span>
-            </h2>
-            <p className="text-lg leading-relaxed" style={{ color: "oklch(0.65 0.02 250)" }}>
-              Maverick's team combines deep expertise in power infrastructure, real estate development, and institutional capital markets — a combination that is rare and difficult to replicate.
+            <p className="text-sm text-[#4a4a46] leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              Maverick develops differentiated ERCOT opportunities for data center users, developers, and infrastructure investors seeking faster access to power-backed sites.
             </p>
-
-            <div className="mt-10 grid grid-cols-3 gap-4">
-              {[
-                { n: "14", label: "States Active" },
-                { n: "25+", label: "Years Combined Experience" },
-                { n: "$2B+", label: "Assets Evaluated" },
-              ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-lg" style={{ background: "oklch(0.17 0.028 250)" }}>
-                  <div className="gp-stat-number text-2xl font-bold text-white">{s.n}</div>
-                  <div className="gp-label mt-1" style={{ fontSize: "0.6rem" }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <div className="space-y-4">
-            {items.map((item, i) => (
-              <motion.div
-                key={i}
-                className="gp-card p-6 flex gap-4"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-              >
-                <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: "oklch(0.62 0.22 230 / 15%)" }}>
-                  <ChevronRight className="w-4 h-4" style={{ color: "oklch(0.62 0.22 230)" }} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>
-                    {item.title}
-                  </h4>
-                  <p className="text-sm leading-relaxed" style={{ color: "oklch(0.62 0.02 250)" }}>
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-[#1a1a18] uppercase tracking-widest mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              For Sellers and Site Sources
+            </h3>
+            <p className="text-sm text-[#4a4a46] leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              We evaluate distressed, paused, and non-core energy development positions where existing development work may still create meaningful value in a new use case.
+            </p>
           </div>
         </div>
       </div>
@@ -814,184 +304,60 @@ function Differentiators() {
   );
 }
 
-// ─── Contact / CTA ────────────────────────────────────────────
-function Contact() {
-  const [form, setForm] = useState({ name: "", company: "", email: "", interest: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  const inputStyle = {
-    background: "oklch(0.22 0.03 250)",
-    border: "1px solid oklch(1 0 0 / 12%)",
-    color: "oklch(0.95 0.005 250)",
-    borderRadius: "0.5rem",
-    padding: "0.75rem 1rem",
-    fontSize: "0.9rem",
-    fontFamily: "'DM Sans', sans-serif",
-    width: "100%",
-    outline: "none",
-    transition: "border-color 0.2s ease",
-  };
-
+// ─── Positioning ──────────────────────────────────────────────
+function Positioning() {
   return (
-    <section className="py-28 relative overflow-hidden" id="contact">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0" style={{ background: "oklch(0.13 0.025 250)" }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[120px] opacity-15"
-          style={{ background: "oklch(0.62 0.22 230)" }} />
+    <section className="py-16 px-6 bg-[#1a1a18]">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-xl sm:text-2xl font-bold text-[#f5f2ed] leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
+          Not Raw Land. Not Full Vertical Development.
+        </p>
+        <p className="text-base text-[#b8b3ac] mt-4 max-w-2xl leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          Maverick focuses on power-driven site opportunities where prior energy development work can create a real timing and execution advantage for data center buyers.
+        </p>
       </div>
+    </section>
+  );
+}
 
-      <div className="container relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <motion.span
-              className="gp-section-tag mb-4 inline-flex"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-current" />
-              Get In Touch
-            </motion.span>
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold text-white leading-tight"
-              style={{ fontFamily: "'Sora', sans-serif" }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              Ready to Move at the{" "}
-              <span className="gp-text-gradient">Speed of Maverick?</span>
-            </motion.h2>
-            <motion.p
-              className="mt-4 text-lg max-w-xl mx-auto"
-              style={{ color: "oklch(0.65 0.02 250)" }}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-            >
-              Whether you are a developer seeking shovel-ready sites, an investor evaluating the opportunity, or a site owner with grid-connected assets, we want to connect.
-            </motion.p>
-          </div>
+// ─── About ────────────────────────────────────────────────────
+function About() {
+  return (
+    <section id="about" className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+          About Maverick
+        </h2>
+        <p className="text-base text-[#4a4a46] leading-relaxed max-w-2xl" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          Maverick Energy Partners is focused on acquiring and advancing ERCOT site opportunities where existing development progress, utility interface, and power-related groundwork can be repositioned for data center use. Our approach is selective, execution-oriented, and shaped by real buyer requirements.
+        </p>
+        <p className="text-sm text-[#7a7a74] mt-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          Michael Siegel, Founder and CEO &mdash; Dallas, Texas
+        </p>
+      </div>
+    </section>
+  );
+}
 
-          <div className="grid lg:grid-cols-5 gap-10">
-            {/* Contact info */}
-            <motion.div
-              className="lg:col-span-2 space-y-6"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div>
-                <h3 className="font-semibold text-white mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>
-                  Who We Serve
-                </h3>
-                {[
-                  "Hyperscale cloud providers",
-                  "Colocation operators",
-                  "AI infrastructure developers",
-                  "Institutional real estate investors",
-                  "Industrial asset owners",
-                  "Utility and energy companies",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 py-2.5 border-b" style={{ borderColor: "oklch(1 0 0 / 6%)" }}>
-                    <div className="w-1.5 h-1.5 rounded-full" style={{ background: "oklch(0.75 0.14 75)" }} />
-                    <span className="text-sm" style={{ color: "oklch(0.72 0.015 250)" }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <a href="mailto:info@maverickenergypartners.com"
-                  className="flex items-center gap-3 text-sm transition-colors"
-                  style={{ color: "oklch(0.65 0.02 250)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.95 0.005 250)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
-                >
-                  <Mail className="w-4 h-4" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  info@maverickenergypartners.com
-                </a>
-
-              </div>
-            </motion.div>
-
-            {/* Form */}
-            <motion.div
-              className="lg:col-span-3"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {submitted ? (
-                <div className="gp-card p-10 text-center">
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
-                    style={{ background: "oklch(0.62 0.22 230 / 15%)" }}>
-                    <CheckCircle2 className="w-7 h-7" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
-                    Message Received
-                  </h3>
-                  <p className="text-sm" style={{ color: "oklch(0.65 0.02 250)" }}>
-                    A member of our team will respond within one business day.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="gp-card p-8 space-y-5">
-                  <div>
-                    <label className="gp-label block mb-2">Full Name</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Jane Smith"
-                      style={inputStyle}
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
-                      onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
-                    />
-                  </div>
-                  <div>
-                    <label className="gp-label block mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="jane@company.com"
-                      style={inputStyle}
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
-                      onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="gp-label block mb-2">Message</label>
-                    <textarea
-                      rows={4}
-                      placeholder="Tell us about your needs or the asset you represent..."
-                      style={{ ...inputStyle, resize: "vertical" }}
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
-                      onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
-                    />
-                  </div>
-                  <button type="submit" className="gp-btn-primary w-full py-3.5 rounded-md font-semibold text-base flex items-center justify-center gap-2">
-                    Send Inquiry <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
-            </motion.div>
-          </div>
-        </div>
+// ─── Contact ──────────────────────────────────────────────────
+function Contact() {
+  return (
+    <section id="contact" className="py-20 px-6 bg-[#eeebe5]">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1a1a18] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+          Contact
+        </h2>
+        <p className="text-base text-[#4a4a46] mb-6 max-w-xl" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          For site opportunities, buyer criteria discussions, or strategic conversations, contact:
+        </p>
+        <a
+          href="mailto:info@maverickenergypartners.com"
+          className="inline-flex items-center gap-2 text-base font-semibold text-[#1a1a18] hover:underline"
+          style={{ fontFamily: "'DM Sans', sans-serif" }}
+        >
+          <Mail className="w-4 h-4" />
+          info@maverickenergypartners.com
+        </a>
       </div>
     </section>
   );
@@ -1000,38 +366,47 @@ function Contact() {
 // ─── Footer ───────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{ background: "oklch(0.10 0.02 250)", borderTop: "1px solid oklch(1 0 0 / 8%)" }}>
-      <div className="container py-10">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs" style={{ color: "oklch(0.42 0.015 250)", fontFamily: "'DM Mono', monospace" }}>
-            © 2026 Maverick Energy Partners. All rights reserved.
-          </p>
-          <a href="mailto:info@maverickenergypartners.com"
-            className="text-xs transition-colors"
-            style={{ color: "oklch(0.42 0.015 250)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.42 0.015 250)")}
-          >
-            info@maverickenergypartners.com
-          </a>
-        </div>
+    <footer className="py-10 px-6 border-t border-[#d8d3cc] bg-[#f5f2ed]">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-sm font-bold text-[#1a1a18] mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+          MAVERICK ENERGY PARTNERS
+        </p>
+        <p className="text-xs text-[#7a7a74] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          ERCOT Power-Ready Site Acquisitions for Data Center Development
+        </p>
+        <a
+          href="mailto:info@maverickenergypartners.com"
+          className="text-xs text-[#7a7a74] hover:text-[#1a1a18] transition-colors"
+          style={{ fontFamily: "'DM Sans', sans-serif" }}
+        >
+          info@maverickenergypartners.com
+        </a>
+        <p className="text-xs text-[#aaa9a4] mt-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          &copy; {new Date().getFullYear()} Maverick Energy Partners. All rights reserved.
+        </p>
       </div>
     </footer>
   );
 }
 
-// ─── Main Export ──────────────────────────────────────────────
+// ─── Page ─────────────────────────────────────────────────────
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.13 0.025 250)" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#f5f2ed" }}>
       <Nav />
       <Hero />
-      <StatsBar />
-      <ValueProp />
-      <Process />
+      <CredibilityStrip />
+      <WhatWeDo />
+      <Divider />
       <WhyNow />
-      <PortfolioCriteria />
-      <Differentiators />
+      <Divider />
+      <TargetSiteProfile />
+      <Divider />
+      <Process />
+      <Divider />
+      <WhoWeWorkWith />
+      <Positioning />
+      <About />
       <Contact />
       <Footer />
     </div>
