@@ -1,5 +1,5 @@
 /* ============================================================
-   GridPoint Capital — Home Landing Page
+   Maverick Energy Partners — Home Landing Page
    Design: Dark Infrastructure / Cinematic Depth
    Sections: Nav, Hero, Stats Bar, Value Prop, Process, Why Now,
              Portfolio Criteria, Team, Contact CTA, Footer
