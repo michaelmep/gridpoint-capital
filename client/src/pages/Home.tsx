@@ -73,7 +73,7 @@ function Nav() {
         <a href="#" className="flex items-center gap-2.5 group">
           <img src={LOGO_URL} alt="Maverick Energy Partners" className="w-8 h-8" />
           <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-            Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Energy</span>
+            Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Partners</span>
           </span>
         </a>
 
@@ -1058,7 +1058,7 @@ function Footer() {
           <div className="flex items-center gap-2.5 mb-4">
             <img src={LOGO_URL} alt="Maverick Energy Partners" className="w-8 h-8" />
             <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-              Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Energy</span>
+              Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Partners</span>
             </span>
           </div>
           <p className="text-sm leading-relaxed max-w-xs" style={{ color: "oklch(0.55 0.02 250)" }}>
