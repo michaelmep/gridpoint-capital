@@ -10,11 +10,14 @@ import Home from "./pages/Home";
 function Router() {
   const [location] = useHashLocation();
   
+  // Default to home if location is empty
+  const normalizedLocation = location === '' ? '/' : location;
+  
   return (
-    <Switch location={location}>
+    <Switch location={normalizedLocation}>
       <Route path={"/"} component={Home} />
       <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
+      <Route component={Home} />
     </Switch>
   );
 }
