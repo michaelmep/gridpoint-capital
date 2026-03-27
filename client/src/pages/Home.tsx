@@ -11,6 +11,7 @@ import { Mail, Menu, X } from "lucide-react";
 
 // ─── Asset URLs ───────────────────────────────────────────────
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/logo-mep-2HQMdqhyo2JijDgTSHUCNe.webp";
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/hero-bg-v2-Hh9i578wsHn9rgtbRhUBBw.webp";
 
 // ─── Navigation ───────────────────────────────────────────────
 function Nav() {
@@ -81,31 +82,47 @@ function Nav() {
 // ─── Hero ─────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="pt-36 pb-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <p className="text-xs font-semibold tracking-widest text-[#7a7a74] uppercase mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <section
+      className="relative pt-40 pb-32 px-6 overflow-hidden"
+      style={{
+        backgroundImage: `url(${HERO_BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center 40%",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(8,8,8,0.80) 0%, rgba(8,8,8,0.68) 55%, rgba(8,8,8,0.88) 100%)",
+        }}
+      />
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <p className="text-xs font-semibold tracking-widest text-[#b8b3ac] uppercase mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           Dallas, Texas · ERCOT
         </p>
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1a1a18] leading-tight mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#f5f2ed] leading-tight mb-8"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           ERCOT Power-Ready Site Acquisitions for Data Center Buyers
         </h1>
-        <p className="text-lg text-[#4a4a46] leading-relaxed max-w-2xl mb-10" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <p className="text-lg text-[#c8c3bc] leading-relaxed max-w-2xl mb-10" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           Maverick Energy Partners acquires stalled, distressed, and undercapitalized energy development sites in ERCOT and advances them into buyer-ready site packages for data center users, developers, and infrastructure investors.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#contact"
-            className="inline-block px-7 py-3 bg-[#1a1a18] text-[#f5f2ed] text-sm font-semibold tracking-wide hover:bg-[#2e2e2a] transition-colors duration-200"
+            className="inline-block px-7 py-3 bg-[#f5f2ed] text-[#1a1a18] text-sm font-semibold tracking-wide hover:bg-white transition-colors duration-200"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Discuss Acquisition Criteria
           </a>
           <a
             href="#contact"
-            className="inline-block px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-semibold tracking-wide hover:bg-[#1a1a18] hover:text-[#f5f2ed] transition-colors duration-200"
+            className="inline-block px-7 py-3 border border-[#f5f2ed]/70 text-[#f5f2ed] text-sm font-semibold tracking-wide hover:bg-[#f5f2ed]/10 transition-colors duration-200"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Contact Maverick
