@@ -10,7 +10,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import {
   Zap, MapPin, Clock, Shield, TrendingUp, ChevronRight,
   ArrowRight, Building2, Bolt, Layers, CheckCircle2,
-  BarChart3, Globe2, Mail, Phone, Linkedin, Menu, X
+  BarChart3, Globe2, Mail, Menu, X
 } from "lucide-react";
 
 // ─── Asset URLs ───────────────────────────────────────────────
@@ -908,33 +908,16 @@ function Contact() {
               </div>
 
               <div className="space-y-3 pt-2">
-                <a href="mailto:inquiries@maverickenergypartners.com"
+                <a href="mailto:info@maverickenergypartners.com"
                   className="flex items-center gap-3 text-sm transition-colors"
                   style={{ color: "oklch(0.65 0.02 250)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.95 0.005 250)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
                 >
                   <Mail className="w-4 h-4" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  inquiries@maverickenergypartners.com
+                  info@maverickenergypartners.com
                 </a>
-                <a href="tel:+12025550147"
-                  className="flex items-center gap-3 text-sm transition-colors"
-                  style={{ color: "oklch(0.65 0.02 250)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.95 0.005 250)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
-                >
-                  <Phone className="w-4 h-4" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  +1 (202) 555-0147
-                </a>
-                <a href="#"
-                  className="flex items-center gap-3 text-sm transition-colors"
-                  style={{ color: "oklch(0.65 0.02 250)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.95 0.005 250)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
-                >
-                  <Linkedin className="w-4 h-4" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  LinkedIn
-                </a>
+
               </div>
             </motion.div>
 
