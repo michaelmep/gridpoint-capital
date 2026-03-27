@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 // ─── Asset URLs ───────────────────────────────────────────────
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/logo-maverick-LJ66FWb7yATUfxA5Ruv6j5.webp";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/logo-mep-2HQMdqhyo2JijDgTSHUCNe.webp";
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/hero-main-3zsqBvvNTiztYStnLq5qgF.webp";
 const PROCESS_POWER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-power-k69UneSXEQcCTYTUP4pKcu.webp";
 const PROCESS_SITE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-site-atsUvUuMhp53sd6Rr5wbTy.webp";
@@ -71,10 +71,7 @@ function Nav() {
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <img src={LOGO_URL} alt="Maverick Energy Partners" className="w-8 h-8" />
-          <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-            Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Partners</span>
-          </span>
+          <img src={LOGO_URL} alt="MEP - Maverick Energy Partners" className="w-9 h-9" />
         </a>
 
         {/* Desktop Links */}
@@ -1056,9 +1053,9 @@ function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
           <div className="flex items-center gap-2.5 mb-4">
-            <img src={LOGO_URL} alt="Maverick Energy Partners" className="w-8 h-8" />
+            <img src={LOGO_URL} alt="MEP - Maverick Energy Partners" className="w-9 h-9" />
             <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-              Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Partners</span>
+              Maverick Energy<span style={{ color: "oklch(0.62 0.22 230)" }}>Partners</span>
             </span>
           </div>
           <p className="text-sm leading-relaxed max-w-xs" style={{ color: "oklch(0.55 0.02 250)" }}>
