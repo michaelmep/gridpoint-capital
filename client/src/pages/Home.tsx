@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 // ─── Asset URLs ───────────────────────────────────────────────
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/logo-maverick-LJ66FWb7yATUfxA5Ruv6j5.webp";
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/hero-main-3zsqBvvNTiztYStnLq5qgF.webp";
 const PROCESS_POWER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-power-k69UneSXEQcCTYTUP4pKcu.webp";
 const PROCESS_SITE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485169196/GApUs5ni8WEeKZLasNEuAR/process-site-atsUvUuMhp53sd6Rr5wbTy.webp";
@@ -70,12 +71,9 @@ function Nav() {
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded flex items-center justify-center"
-            style={{ background: "oklch(0.62 0.22 230)" }}>
-            <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-          </div>
+          <img src={LOGO_URL} alt="Maverick Energy Partners" className="w-8 h-8" />
           <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-            GridPoint<span style={{ color: "oklch(0.62 0.22 230)" }}>Capital</span>
+            Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Energy</span>
           </span>
         </a>
 
@@ -178,32 +176,31 @@ function Hero() {
           >
             <span className="gp-section-tag mb-6 inline-flex">
               <span className="w-1.5 h-1.5 rounded-full bg-current" />
-              Infrastructure Repositioning
+              Electrical Infrastructure Repositioning
             </span>
           </motion.div>
 
-          <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white mb-6"
-            style={{ fontFamily: "'Sora', sans-serif" }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
-            Power Already{" "}
-            <span className="gp-text-gradient">In The Ground.</span>{" "}
-            Sites Ready{" "}
-            <span style={{ color: "oklch(0.75 0.14 75)" }}>To Build.</span>
-          </motion.h1>
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white mb-6"
+              style={{ fontFamily: "'Sora', sans-serif" }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
+              Power Already{" "}
+              <span className="gp-text-gradient">In The Ground.</span>{" "}
+              <span style={{ color: "oklch(0.75 0.14 75)" }}>Ready To Build.</span>
+            </motion.h1>
 
-          <motion.p
-            className="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
-            style={{ color: "oklch(0.78 0.015 250)", fontFamily: "'DM Sans', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            GridPoint Capital identifies, acquires, and repositions existing electrical infrastructure — substations, retired power plants, and grid-connected industrial sites — into fully entitled, shovel-ready data center campuses. We compress years of development timelines into months.
-          </motion.p>
+            <motion.p
+              className="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
+              style={{ color: "oklch(0.78 0.015 250)", fontFamily: "'DM Sans', sans-serif" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              Maverick Energy Partners identifies, acquires, and repositions existing electrical infrastructure — substations, retired power plants, and grid-connected industrial sites — into fully entitled, shovel-ready data center campuses. We compress years of development timelines into months.
+            </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4"
@@ -212,7 +209,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <a href="#contact" className="gp-btn-primary px-8 py-4 rounded-md text-base font-semibold flex items-center gap-2 justify-center">
-              Explore Our Portfolio <ArrowRight className="w-4 h-4" />
+              Start a Conversation <ArrowRight className="w-4 h-4" />
             </a>
             <a href="#process" className="gp-btn-outline px-8 py-4 rounded-md text-base font-medium flex items-center gap-2 justify-center">
               How It Works
@@ -264,7 +261,7 @@ function StatsBar() {
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 )}
               </div>
-              <div className="gp-label">{stat.label}</div>
+              <div className="gp-label" style={{ fontFamily: "'DM Mono', monospace" }}>{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -330,7 +327,7 @@ function ValueProp() {
             transition={{ delay: 0.1 }}
           >
             The Infrastructure Is Already There.{" "}
-            <span className="gp-text-gradient">We Unlock It.</span>
+            <span className="gp-text-gradient">Maverick Unlocks It.</span>
           </motion.h2>
           <motion.p
             className="mt-5 text-lg max-w-2xl leading-relaxed"
@@ -340,7 +337,7 @@ function ValueProp() {
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
           >
-            The data center industry faces a fundamental constraint: power. Grid interconnection queues stretch 5–10 years. GridPoint Capital's strategy bypasses this bottleneck entirely by repositioning sites that already have what developers need most.
+            The data center industry faces a fundamental constraint: power. Grid interconnection queues stretch 5–10 years. Maverick Energy Partners' strategy bypasses this bottleneck entirely by repositioning sites that already have what developers need most.
           </motion.p>
         </div>
 
@@ -419,8 +416,8 @@ function Process() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            From Stranded Asset{" "}
-            <span className="gp-text-gradient">to Shovel-Ready Site</span>
+            From Stranded Asset to{" "}
+            <span className="gp-text-gradient">Shovel-Ready Site</span>
           </motion.h2>
         </div>
 
@@ -543,19 +540,18 @@ function WhyNow() {
               <span className="w-1.5 h-1.5 rounded-full bg-current" />
               Market Opportunity
             </motion.span>
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "'Sora', sans-serif" }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              The Power Constraint Is{" "}
-              <span style={{ color: "oklch(0.75 0.14 75)" }}>Structural.</span>{" "}
-              Our Advantage Is{" "}
-              <span className="gp-text-gradient">Permanent.</span>
-            </motion.h2>
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
+            style={{ fontFamily: "'Sora', sans-serif" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            The Power Constraint Is{" "}
+            <span style={{ color: "oklch(0.75 0.14 75)" }}>Structural.</span> Maverick's{" "}
+            <span className="gp-text-gradient">Advantage Is Permanent.</span>
+          </motion.h2>
             <div className="space-y-4">
               {points.map((point, i) => (
                 <motion.div
@@ -643,8 +639,8 @@ function PortfolioCriteria() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            What We{" "}
-            <span className="gp-text-gradient">Acquire & Reposition</span>
+            What Maverick{" "}
+            <span className="gp-text-gradient">Acquires & Repositions</span>
           </motion.h2>
           <motion.p
             className="mt-5 text-lg max-w-xl leading-relaxed"
@@ -654,7 +650,7 @@ function PortfolioCriteria() {
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
           >
-            We are active buyers of grid-connected industrial assets. If you own or represent a site that meets our criteria, we want to hear from you.
+            Maverick is actively acquiring grid-connected industrial assets. If you own or represent a site that meets our criteria, we want to hear from you.
           </motion.p>
         </div>
 
@@ -768,11 +764,11 @@ function Differentiators() {
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
               style={{ fontFamily: "'Sora', sans-serif" }}>
-              Why GridPoint{" "}
+              Why Maverick{" "}
               <span className="gp-text-gradient">Outperforms</span>
             </h2>
             <p className="text-lg leading-relaxed" style={{ color: "oklch(0.65 0.02 250)" }}>
-              Our team combines deep expertise in power infrastructure, real estate development, and institutional capital markets — a combination that is rare and difficult to replicate.
+              Maverick's team combines deep expertise in power infrastructure, real estate development, and institutional capital markets — a combination that is rare and difficult to replicate.
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-4">
@@ -872,7 +868,7 @@ function Contact() {
               transition={{ delay: 0.1 }}
             >
               Ready to Move at the{" "}
-              <span className="gp-text-gradient">Speed of Power?</span>
+              <span className="gp-text-gradient">Speed of Maverick?</span>
             </motion.h2>
             <motion.p
               className="mt-4 text-lg max-w-xl mx-auto"
@@ -897,7 +893,7 @@ function Contact() {
             >
               <div>
                 <h3 className="font-semibold text-white mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>
-                  Who We Work With
+                  Who We Serve
                 </h3>
                 {[
                   "Hyperscale cloud providers",
@@ -915,14 +911,14 @@ function Contact() {
               </div>
 
               <div className="space-y-3 pt-2">
-                <a href="mailto:inquiries@gridpointcapital.com"
+                <a href="mailto:inquiries@maverickenergypartners.com"
                   className="flex items-center gap-3 text-sm transition-colors"
                   style={{ color: "oklch(0.65 0.02 250)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.95 0.005 250)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
                 >
                   <Mail className="w-4 h-4" style={{ color: "oklch(0.62 0.22 230)" }} />
-                  inquiries@gridpointcapital.com
+                  inquiries@maverickenergypartners.com
                 </a>
                 <a href="tel:+12025550147"
                   className="flex items-center gap-3 text-sm transition-colors"
@@ -1059,18 +1055,15 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded flex items-center justify-center"
-                style={{ background: "oklch(0.62 0.22 230)" }}>
-                <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-                GridPoint<span style={{ color: "oklch(0.62 0.22 230)" }}>Capital</span>
-              </span>
-            </div>
-            <p className="text-sm leading-relaxed max-w-xs" style={{ color: "oklch(0.55 0.02 250)" }}>
-              Repositioning existing electrical infrastructure into shovel-ready data center sites. Compressing development timelines from years to months.
-            </p>
+          <div className="flex items-center gap-2.5 mb-4">
+            <img src={LOGO_URL} alt="Maverick Energy Partners" className="w-8 h-8" />
+            <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
+              Maverick<span style={{ color: "oklch(0.62 0.22 230)" }}>Energy</span>
+            </span>
+          </div>
+          <p className="text-sm leading-relaxed max-w-xs" style={{ color: "oklch(0.55 0.02 250)" }}>
+            Maverick Energy Partners repositions existing electrical infrastructure into shovel-ready data center sites. Compressing development timelines from years to months.
+          </p>
             <div className="flex gap-3 mt-5">
               <a href="#" className="w-9 h-9 rounded-md flex items-center justify-center transition-colors"
                 style={{ background: "oklch(0.17 0.028 250)", color: "oklch(0.55 0.02 250)" }}
@@ -1121,7 +1114,7 @@ function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs" style={{ color: "oklch(0.42 0.015 250)", fontFamily: "'DM Mono', monospace" }}>
-            © 2026 GridPoint Capital LLC. All rights reserved.
+            © 2026 Maverick Energy Partners. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Use", "Disclosures"].map((item) => (
