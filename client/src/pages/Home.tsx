@@ -72,6 +72,7 @@ function Nav() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <img src={LOGO_URL} alt="MEP - Maverick Energy Partners" className="w-9 h-9" />
+          <span className="hidden sm:block font-bold text-lg" style={{ color: "oklch(0.95 0.005 250)", fontFamily: "'Sora', sans-serif" }}>Maverick Energy Partners</span>
         </a>
 
         {/* Desktop Links */}
