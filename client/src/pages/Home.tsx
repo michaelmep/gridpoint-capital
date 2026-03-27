@@ -596,7 +596,7 @@ function WhyNow() {
 // ─── Portfolio Criteria ───────────────────────────────────────
 function PortfolioCriteria() {
   const criteria = [
-    { label: "Power Capacity", value: "50 MW – 500+ MW", icon: <Zap className="w-4 h-4" /> },
+    { label: "Power Capacity", value: "10 – 75 MW", icon: <Zap className="w-4 h-4" /> },
     { label: "Site Acreage", value: "20 – 500+ acres", icon: <MapPin className="w-4 h-4" /> },
     { label: "Voltage Level", value: "115 kV – 500 kV", icon: <Bolt className="w-4 h-4" /> },
     { label: "Asset Types", value: "Power Plants, Substations, Industrial", icon: <Building2 className="w-4 h-4" /> },
@@ -961,33 +961,18 @@ function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="gp-card p-8 space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="gp-label block mb-2">Full Name</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Jane Smith"
-                        style={inputStyle}
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
-                        onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
-                      />
-                    </div>
-                    <div>
-                      <label className="gp-label block mb-2">Company</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Acme Corp"
-                        style={inputStyle}
-                        value={form.company}
-                        onChange={(e) => setForm({ ...form, company: e.target.value })}
-                        onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
-                        onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
-                      />
-                    </div>
+                  <div>
+                    <label className="gp-label block mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Jane Smith"
+                      style={inputStyle}
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
+                      onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
+                    />
                   </div>
                   <div>
                     <label className="gp-label block mb-2">Email Address</label>
@@ -1002,23 +987,7 @@ function Contact() {
                       onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
                     />
                   </div>
-                  <div>
-                    <label className="gp-label block mb-2">I Am Interested In</label>
-                    <select
-                      style={{ ...inputStyle, appearance: "none" }}
-                      value={form.interest}
-                      onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                      onFocus={(e) => (e.target.style.borderColor = "oklch(0.62 0.22 230 / 60%)")}
-                      onBlur={(e) => (e.target.style.borderColor = "oklch(1 0 0 / 12%)")}
-                    >
-                      <option value="" style={{ background: "oklch(0.17 0.028 250)" }}>Select an option...</option>
-                      <option value="acquiring-sites" style={{ background: "oklch(0.17 0.028 250)" }}>Acquiring shovel-ready sites</option>
-                      <option value="investing" style={{ background: "oklch(0.17 0.028 250)" }}>Investment opportunities</option>
-                      <option value="selling-assets" style={{ background: "oklch(0.17 0.028 250)" }}>Selling grid-connected assets</option>
-                      <option value="partnership" style={{ background: "oklch(0.17 0.028 250)" }}>Partnership / Joint venture</option>
-                      <option value="other" style={{ background: "oklch(0.17 0.028 250)" }}>Other inquiry</option>
-                    </select>
-                  </div>
+
                   <div>
                     <label className="gp-label block mb-2">Message</label>
                     <textarea
@@ -1048,83 +1017,19 @@ function Contact() {
 function Footer() {
   return (
     <footer style={{ background: "oklch(0.10 0.02 250)", borderTop: "1px solid oklch(1 0 0 / 8%)" }}>
-      <div className="container py-14">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-          <div className="flex items-center gap-2.5 mb-4">
-            <img src={LOGO_URL} alt="MEP - Maverick Energy Partners" className="w-9 h-9" />
-            <span className="font-bold text-lg tracking-tight text-white" style={{ fontFamily: "'Sora', sans-serif" }}>
-              Maverick Energy<span style={{ color: "oklch(0.62 0.22 230)" }}>Partners</span>
-            </span>
-          </div>
-          <p className="text-sm leading-relaxed max-w-xs" style={{ color: "oklch(0.55 0.02 250)" }}>
-            Maverick Energy Partners repositions existing electrical infrastructure into shovel-ready data center sites. Compressing development timelines from years to months.
-          </p>
-            <div className="flex gap-3 mt-5">
-              <a href="#" className="w-9 h-9 rounded-md flex items-center justify-center transition-colors"
-                style={{ background: "oklch(0.17 0.028 250)", color: "oklch(0.55 0.02 250)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "oklch(0.22 0.03 250)"; e.currentTarget.style.color = "oklch(0.95 0.005 250)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "oklch(0.17 0.028 250)"; e.currentTarget.style.color = "oklch(0.55 0.02 250)"; }}
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>Company</h4>
-            <ul className="space-y-3">
-              {["About", "Our Process", "Portfolio", "Why Now", "Contact"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-sm transition-colors"
-                    style={{ color: "oklch(0.55 0.02 250)" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.85 0.01 250)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.55 0.02 250)")}
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>Contact</h4>
-            <ul className="space-y-3">
-              <li className="text-sm" style={{ color: "oklch(0.55 0.02 250)" }}>
-                inquiries@gridpointcapital.com
-              </li>
-              <li className="text-sm" style={{ color: "oklch(0.55 0.02 250)" }}>
-                +1 (202) 555-0147
-              </li>
-              <li className="text-sm" style={{ color: "oklch(0.55 0.02 250)" }}>
-                Washington, D.C. Metro Area
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="gp-divider mb-6" />
-
+      <div className="container py-10">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs" style={{ color: "oklch(0.42 0.015 250)", fontFamily: "'DM Mono', monospace" }}>
             © 2026 Maverick Energy Partners. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Use", "Disclosures"].map((item) => (
-              <a key={item} href="#"
-                className="text-xs transition-colors"
-                style={{ color: "oklch(0.42 0.015 250)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.42 0.015 250)")}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
+          <a href="mailto:info@maverickenergypartners.com"
+            className="text-xs transition-colors"
+            style={{ color: "oklch(0.42 0.015 250)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.65 0.02 250)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.42 0.015 250)")}
+          >
+            info@maverickenergypartners.com
+          </a>
         </div>
       </div>
     </footer>
