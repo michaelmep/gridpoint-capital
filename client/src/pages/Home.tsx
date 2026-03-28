@@ -111,7 +111,7 @@ function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-3">
-          <img src={LOGO_URL} alt="MEP" className="w-9 h-9" />
+          <img src={LOGO_URL} alt="Maverick Energy Partners" className="h-12 w-auto" style={{ filter: "invert(1) brightness(2)" }} />
           <span className="hidden sm:block font-bold text-sm tracking-wide" style={{ color: C.textPrimary, fontFamily: "'Sora', sans-serif", letterSpacing: "0.04em" }}>
             Maverick Energy Partners
           </span>
@@ -568,7 +568,7 @@ function Footer() {
     <footer className="py-10 px-6" style={{ background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-2">
-          <img src={LOGO_URL} alt="MEP" className="w-7 h-7" />
+          <img src={LOGO_URL} alt="Maverick Energy Partners" className="h-9 w-auto" style={{ filter: "invert(1) brightness(2)" }} />
           <span className="text-sm font-bold" style={{ color: C.textPrimary, fontFamily: "'Sora', sans-serif" }}>
             Maverick Energy Partners
           </span>
