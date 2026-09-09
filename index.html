@@ -1187,7 +1187,7 @@ section { position: relative; }
 .stack-48 { display: flex; flex-direction: column; gap: 48px; }
 
   </style>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://maverickenergypartners.com/"><script type="application/ld+json">{"@context": "https://schema.org","@type": "RealEstateAgent","name": "Maverick Energy Partners","url": "https://maverickenergypartners.com","description": "Maverick Energy Partners sources and acquires energy-adjacent land in Texas for data center developers and capital partners.","email": "info@maverickenergypartners.com","address": { "@type": "PostalAddress", "addressLocality": "Dallas", "addressRegion": "TX", "addressCountry": "US" },"areaServed": { "@type": "State", "name": "Texas" },"sameAs": []}</script><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
 </head>
@@ -1363,7 +1363,7 @@ window.Footer = function Footer({ onNav }) {
           <div>
             <h5>Partners</h5>
             <ul>
-              <li><a href="#" onClick={(e)=>{e.preventDefault();onNav('contact');}}>Landowners</a></li>
+              <li><a href="/sell-your-land.html">Sell your land</a></li>
               <li><a href="#" onClick={(e)=>{e.preventDefault();onNav('contact');}}>Brokers</a></li>
               <li><a href="#" onClick={(e)=>{e.preventDefault();onNav('contact');}}>Developers</a></li>
               <li><a href="#" onClick={(e)=>{e.preventDefault();onNav('contact');}}>Capital partners</a></li>
@@ -1808,9 +1808,9 @@ window.HomeCoverage = function HomeCoverage({ onNav }) {
 // ── Audiences ───────────────────────────────────────────────────────────────
 window.HomeAudiences = function HomeAudiences({ onNav }) {
   const items = [
-    { tag: 'Landowners & brokers', t: 'You have land near transmission',
-      body: 'We buy directly. Cash close, clean terms, fast diligence. If a parcel doesn’t fit, we say so within the week.',
-      signals: ['Direct buyer', 'Cash close', 'Decisions in days'] },
+    { tag: 'Landowners & brokers', t: 'Sell land near a power line or substation',
+      body: 'We buy directly from landowners, heirs, and brokers across Texas — cash close, clean terms, fast diligence. If a parcel doesn’t fit, we say so within the week.',
+      signals: ['Direct buyer', 'Cash close', 'Decisions in days'], href: '/sell-your-land.html', cta: 'See how to sell your land' },
     { tag: 'Data center developers', t: 'You need a site that pencils',
       body: 'Every site we bring forward has been screened for grid capacity, title, zoning, water, and fiber before it reaches you.',
       signals: ['Capacity verified', 'Diligence complete', 'Permit-ready'] },
@@ -1839,7 +1839,7 @@ window.HomeAudiences = function HomeAudiences({ onNav }) {
               <ul className="audience-signals">
                 {a.signals.map((s,i) => <li key={i}>· {s}</li>)}
               </ul>
-              <div style={{marginTop: 24}}>
+              {a.href && (<div style={{marginTop: 24}}><a href={a.href} className="btn btn--ghost">{a.cta || 'Get in touch'}</a></div>)}<div style={{marginTop: 24, display: a.href ? 'none' : 'block'}}>
                 <a href="#" className="btn btn--ghost"
                    onClick={(e)=>{e.preventDefault(); onNav('contact');}}>
                   Get in touch
