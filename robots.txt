@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /client/
+Disallow: /server/
+Disallow: /shared/
+Disallow: /dist/
+Disallow: /__manus__/
+Disallow: /patches/
 
 Sitemap: https://maverickenergypartners.com/sitemap.xml
