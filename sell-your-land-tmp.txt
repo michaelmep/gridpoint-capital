@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Sell Your Land Near Power Lines or a Substation in Texas | Maverick Energy Partners</title>
+<meta name="description" content="Own Texas land near a transmission line or substation? Maverick Energy Partners buys directly from landowners for data center development — cash close, no listing, no commission, decisions in days.">
+<link rel="canonical" href="https://maverickenergypartners.com/sell-your-land.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sell Your Land Near Power Lines or a Substation in Texas | Maverick Energy Partners">
+<meta property="og:description" content="We buy Texas land directly from landowners for data center development — cash close, no listing, decisions in days.">
+<meta property="og:url" content="https://maverickenergypartners.com/sell-your-land.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSJub25lIj4KICA8cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0iI0Y0RjJFRCI+PC9yZWN0Pgo8L3N2Zz4=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap');
+
+:root {
+  --bone:        #F5F2EC;
+  --bone-warm:   #EFEBE3;
+  --paper:       #FFFFFF;
+  --ink:         #11161F;
+  --ink-soft:    #29303B;
+  --navy:        #082B5F;
+  --navy-800:    #061E45;
+  --navy-200:    #B7C5DB;
+  --navy-050:    #E8EEF7;
+  --n-900: #11161F; --n-800: #1D2330; --n-700: #353C49; --n-600: #555C68;
+  --n-500: #6F7682; --n-400: #9CA2AB; --n-300: #C7CACF; --n-200: #DCDEDF;
+  --n-100: #EAE7E0; --n-050: #F5F2EC;
+  --bg: var(--bone); --bg-sunken: var(--bone-warm); --bg-raised: var(--paper);
+  --fg: var(--ink); --fg-soft: var(--ink-soft); --fg-dim: var(--n-600); --fg-mute: var(--n-500);
+  --rule: var(--n-100); --rule-strong: var(--n-200);
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Newsreader', ui-serif, Georgia, serif;
+  --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --container: 1240px; --container-narrow: 880px; --nav-h: 72px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-quick: 180ms;
+}
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html, body { margin: 0; padding: 0; }
+body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--fg); background: var(--bg); }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 300; color: var(--fg); margin: 0; }
+h1 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -0.035em; line-height: 1.02; }
+h2 { font-size: clamp(30px, 3.6vw, 44px); letter-spacing: -0.025em; line-height: 1.08; }
+h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; letter-spacing: -0.005em; }
+p { font-size: 16px; line-height: 1.7; color: var(--fg-soft); margin: 0; }
+.lede { font-weight: 300; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; color: var(--fg-soft); max-width: 62ch; }
+em.accent { font-family: var(--font-serif); font-style: italic; font-weight: 300; color: var(--navy); }
+.eyebrow { font-family: var(--font-mono); font-weight: 500; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+.container-narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+@media (min-width: 768px) { .container, .container-narrow { padding: 0 48px; } }
+section { padding: 88px 0; }
+.section-sunken { background: var(--bg-sunken); }
+.section-rule-top { border-top: 1px solid var(--rule); }
+hr.rule { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 500; font-size: 14px; height: 46px; padding: 0 24px; border-radius: 2px; border: 1px solid transparent; cursor: pointer; background: transparent; color: var(--fg); transition: background var(--dur-quick) var(--ease), color var(--dur-quick) var(--ease), border-color var(--dur-quick) var(--ease); white-space: nowrap; }
+.btn--primary { background: var(--navy); color: var(--bone); border-color: var(--navy); }
+.btn--primary:hover { background: var(--navy-800); border-color: var(--navy-800); }
+.btn--outline { background: transparent; border-color: var(--n-300); color: var(--fg); }
+.btn--outline:hover { border-color: var(--navy); color: var(--navy); }
+.btn--lg { height: 54px; padding: 0 30px; font-size: 15px; }
+.nav { position: sticky; top: 0; z-index: 50; height: var(--nav-h); background: color-mix(in oklab, var(--bone) 88%, transparent); backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--rule); }
+.nav-inner { height: 100%; max-width: var(--container); margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 32px; }
+.nav-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--navy); letter-spacing: -0.01em; }
+.nav-links { list-style: none; padding: 0; margin: 0 0 0 auto; display: flex; align-items: center; gap: 4px; }
+.nav-link { display: inline-flex; align-items: center; font-size: 14px; color: var(--fg-soft); padding: 8px 16px; border-radius: 2px; }
+.nav-link:hover { color: var(--fg); }
+.nav-link.active { color: var(--fg); font-weight: 500; }
+@media (max-width: 900px) { .nav-links a.nav-link:not(.always-show) { display: none; } }
+@media (min-width: 1024px) { .nav-inner { padding: 0 48px; } }
+
+.hero { position: relative; padding: 88px 0 72px; border-bottom: 1px solid var(--rule); }
+.hero-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--navy); }
+
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.checklist li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; line-height: 1.6; color: var(--fg-soft); }
+.checklist li::before { content: '—'; color: var(--navy); font-family: var(--font-mono); flex: 0 0 auto; }
+.steps { display: grid; gap: 0; grid-template-columns: 1fr; border-top: 1px solid var(--rule-strong); }
+@media (min-width: 860px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step { padding: 32px 28px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+@media (min-width: 860px) { .step:last-child { border-right: none; } }
+.step .num { font-family: var(--font-mono); font-size: 12px; color: var(--fg-mute); letter-spacing: 0.1em; }
+.step h3 { margin: 10px 0 8px; }
+.step p { font-size: 14.5px; }
+
+.zone-grid { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--rule-strong); }
+@media (min-width: 700px) { .zone-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .zone-grid { grid-template-columns: repeat(3, 1fr); } }
+.zone-cell { padding: 26px 28px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.zone-cell h3 { font-size: 16px; }
+.zone-cell .region { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-mute); margin: 6px 0 10px; }
+.zone-cell p { font-size: 14px; }
+
+.faq { border-top: 1px solid var(--rule-strong); }
+.faq-item { border-bottom: 1px solid var(--rule); padding: 26px 0; }
+.faq-item h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
+.faq-item p { font-size: 15px; }
+
+.cta-panel { background: var(--ink); color: var(--bone); border-radius: 4px; padding: 56px 48px; display: grid; gap: 28px; }
+.cta-panel h2 { color: var(--bone); }
+.cta-panel p { color: var(--n-300); }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.cta-panel .btn--outline { border-color: rgba(255,255,255,0.3); color: var(--bone); }
+.cta-panel .btn--outline:hover { border-color: var(--bone); }
+.cta-detail { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.05em; color: var(--n-400); }
+.cta-detail strong { color: var(--bone); font-weight: 500; }
+
+.footer { background: var(--ink); color: var(--bone); padding: 72px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; } }
+.footer h5 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bone); margin: 0 0 18px; font-weight: 500; }
+.footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer a { color: var(--n-300); font-size: 14px; }
+.footer a:hover { color: var(--bone); }
+.footer-brand p { color: var(--n-400); font-size: 14px; line-height: 1.6; max-width: 340px; }
+.footer-meta { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--n-500); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Maverick Energy Partners</a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/#/approach" class="nav-link">Approach</a></li>
+      <li><a href="/#/process" class="nav-link">Process</a></li>
+      <li><a href="/#/about" class="nav-link">About</a></li>
+      <li><a href="/sell-your-land.html" class="nav-link active always-show">Sell Your Land</a></li>
+      <li><a href="/#/contact" class="btn btn--outline always-show" style="height:40px;padding:0 18px;">Talk to us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow"><span class="eyebrow">Landowners &amp; Brokers · Texas</span></div>
+    <h1>Sell your Texas land <em class="accent">directly</em> — no listing, no commission, no waiting for a buyer to appear.</h1>
+    <p class="lede" style="margin-top:28px;">If your land sits near a transmission line, substation, or rural power corridor in Texas, it may be worth more to a data center developer than to any other buyer. We're a direct buyer — not a broker — and we can tell you within a week whether your land fits.</p>
+    <div style="margin-top:40px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="mailto:info@maverickenergypartners.com?subject=Land%20for%20sale%20-%20inquiry" class="btn btn--primary btn--lg">Tell us about your land</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div style="display:grid; grid-template-columns: 1fr; gap:64px;" class="grid-2">
+      <div>
+        <span class="eyebrow">Does your land qualify?</span>
+        <h2 style="margin-top:16px;">You don't need to know the answer. We'll tell you.</h2>
+        <p class="lede" style="margin-top:20px;">Most landowners have no way to know whether their property has real value to a data center developer — that depends on grid capacity most people never look at. These are the signals that usually mean it's worth a conversation:</p>
+      </div>
+      <ul class="checklist">
+        <li>Your land is within a mile or two of a substation, switching station, or a 69kV/138kV/345kV transmission line — even if you're not sure of the exact voltage.</li>
+        <li>You've been contacted before by a utility, a solar/wind developer, or another company about an easement or right-of-way on or near your property.</li>
+        <li>The parcel is 20 acres or larger (we also buy smaller parcels that sit inside a larger assemblage).</li>
+        <li>You're an heir, executor, or one of several co-owners of inherited or family land and want a straightforward buyer rather than a drawn-out listing process.</li>
+        <li>You're a rancher or farmer who's open to selling all or part of a larger tract if the price and terms make sense.</li>
+        <li>Your land is currently listed and hasn't moved, or you've had it off-market and never tested what it's worth to this specific type of buyer.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-sunken section-rule-top">
+  <div class="container">
+    <span class="eyebrow">How it works</span>
+    <h2 style="margin-top:16px; max-width:800px;">Four steps, most of the runway carried by us, not you.</h2>
+    <div class="steps" style="margin-top:48px;">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>You tell us about the land</h3>
+        <p>Location, acreage, and anything you know about power lines or prior utility contact. Takes five minutes by email.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>We screen it — free, no obligation</h3>
+        <p>We check grid capacity, title, and zoning ourselves using public records. If it doesn't fit, we tell you within the week and say why.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>We make a direct offer</h3>
+        <p>No listing, no showings, no marketing period. Terms are usually a short paid option period followed by a cash closing.</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <h3>Cash close</h3>
+        <p>We handle title and closing costs are negotiated up front. You're not carrying diligence risk — we are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="eyebrow">Why sell to a direct buyer</span>
+    <h2 style="margin-top:16px; max-width:820px;">A listing finds you a buyer eventually. We already are one.</h2>
+    <div style="display:grid; grid-template-columns:1fr; gap:32px; margin-top:48px;" class="grid-3">
+      <div>
+        <h3>No commission, no marketing period</h3>
+        <p style="margin-top:10px; font-size:15px;">A traditional land listing can sit for a year or more waiting for the right buyer. We buy directly, so there's no agent commission and no waiting for showings.</p>
+      </div>
+      <div>
+        <h3>We work with estates and multiple owners</h3>
+        <p style="margin-top:10px; font-size:15px;">Inherited land, land in probate, or land split across several family members doesn't disqualify you. We've structured deals around exactly this before.</p>
+      </div>
+      <div>
+        <h3>Confidential, no public listing</h3>
+        <p style="margin-top:10px; font-size:15px;">If you'd rather not have "for sale" signage or a public MLS listing your neighbors will see, a direct sale stays private until you're ready to close.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sunken section-rule-top">
+  <div class="container">
+    <span class="eyebrow">Where we buy</span>
+    <h2 style="margin-top:16px; max-width:760px;">Active in all six ERCOT zones — Texas only.</h2>
+    <div class="zone-grid" style="margin-top:40px;">
+      <div class="zone-cell"><h3>ERCOT North</h3><div class="region">DFW · I-35 corridor</div><p>Dense load growth and mature transmission. Our home market.</p></div>
+      <div class="zone-cell"><h3>ERCOT West</h3><div class="region">Permian Basin · I-20</div><p>Industrial counties, shorter permitting cycles, abundant land near 345kV.</p></div>
+      <div class="zone-cell"><h3>ERCOT South</h3><div class="region">San Antonio · Eagle Ford</div><p>Active interconnect queue and a tertiary city economy on the rise.</p></div>
+      <div class="zone-cell"><h3>ERCOT Houston</h3><div class="region">Greater Houston · I-10</div><p>Petrochem-adjacent corridor with the densest 345kV transmission in Texas.</p></div>
+      <div class="zone-cell"><h3>ERCOT Coast</h3><div class="region">Beaumont to Corpus Christi</div><p>Renewables-heavy generation profile, coastal regulatory posture.</p></div>
+      <div class="zone-cell" style="border-right:none;"><h3>ERCOT Panhandle</h3><div class="region">Amarillo region</div><p>Wind-rich, light load competition, long transmission paths.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <span class="eyebrow">Frequently asked</span>
+    <h2 style="margin-top:16px;">What landowners usually ask us</h2>
+    <div class="faq" style="margin-top:40px;">
+      <div class="faq-item">
+        <h3>How do I sell land near a power line or substation in Texas?</h3>
+        <p>Start by telling us where the land is and what you know about nearby transmission infrastructure — you don't need to know the voltage or ownership. We do that research ourselves using ERCOT, utility, and county records, then tell you honestly whether it's a fit and what it might be worth.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need a realtor to sell my land to a data center developer?</h3>
+        <p>No. We buy directly from landowners and brokers alike. If you already have a broker, we're glad to work with them; if you don't, you don't need to hire one to talk to us.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What makes land valuable for a data center site?</h3>
+        <p>Proximity to a substation or transmission line is the headline, but the real driver is whether that substation has spare capacity to accept new load — most nearby substations in Texas don't. Parcel size, shape, flood zone, water access, and zoning also matter. We screen for all of it before making an offer.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How fast can you close?</h3>
+        <p>Once we've confirmed the site fits, terms are usually a short paid option period (60–180 days) to finish utility and title diligence, followed by a cash closing. We move as fast as the utility and title work allow — often faster than a traditional buyer financing a purchase.</p>
+      </div>
+      <div class="faq-item">
+        <h3>My land has multiple owners, or is in probate — can you still buy it?</h3>
+        <p>Yes. We regularly work with heirship property, estates in probate, and land held across several family members. Tell us the situation up front and we'll structure around it.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is there a minimum acreage?</h3>
+        <p>We typically look at parcels of 20 acres or more, but smaller tracts can matter if they sit next to a larger assemblage we're already evaluating. When in doubt, send it to us — the screen is free.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you pay cash, and is there a fee to talk to you?</h3>
+        <p>Yes, closings are cash. There's no cost or obligation to have us screen your land — most of what we check is public record, and we'll tell you plainly if it isn't a fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-rule-top">
+  <div class="container">
+    <div class="cta-panel">
+      <span class="eyebrow" style="color:var(--n-400);">Get in touch</span>
+      <h2>Tell us about your land. We'll tell you honestly if it fits — usually within the week.</h2>
+      <div class="cta-row">
+        <a href="mailto:info@maverickenergypartners.com?subject=Land%20for%20sale%20-%20inquiry" class="btn btn--primary btn--lg">Email info@maverickenergypartners.com</a>
+      </div>
+      <div class="cta-detail">Direct buyer · Cash close · Response within one business day</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h5 style="margin-bottom:14px;">Maverick Energy Partners</h5>
+        <p>Data center land acquisition in Texas. Energy-adjacent sites with direct transmission access, sourced for developers and capital partners.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#/approach">Approach</a></li>
+          <li><a href="/#/process">Process</a></li>
+          <li><a href="/#/about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Sell Land</h5>
+        <ul>
+          <li><a href="/sell-your-land.html">Sell your land</a></li>
+          <li><a href="/#/contact">Talk to us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@maverickenergypartners.com">info@maverickenergypartners.com</a></li>
+          <li>Dallas, TX</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta">© 2026 Maverick Energy Partners · Dallas, TX</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Maverick Energy Partners",
+  "url": "https://maverickenergypartners.com",
+  "description": "Maverick Energy Partners buys Texas land directly from landowners near transmission infrastructure for data center development.",
+  "email": "info@maverickenergypartners.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Dallas", "addressRegion": "TX", "addressCountry": "US" },
+  "areaServed": { "@type": "State", "name": "Texas" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I sell land near a power line or substation in Texas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tell us where the land is and what you know about nearby transmission infrastructure. We research grid capacity, title, and zoning ourselves using public records, then tell you honestly whether it's a fit and what it might be worth." } },
+    { "@type": "Question", "name": "Do I need a realtor to sell my land to a data center developer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Maverick Energy Partners buys directly from landowners and brokers alike. If you already have a broker we're glad to work with them, but you don't need to hire one to talk to us." } },
+    { "@type": "Question", "name": "What makes land valuable for a data center site?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Proximity to a substation or transmission line is the headline, but the real driver is whether that substation has spare capacity to accept new load. Parcel size, shape, flood zone, water access, and zoning also matter." } },
+    { "@type": "Question", "name": "How fast can you close on Texas land?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Terms are usually a short paid option period of 60 to 180 days to finish utility and title diligence, followed by a cash closing." } },
+    { "@type": "Question", "name": "Can you buy land with multiple owners or in probate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Maverick Energy Partners regularly works with heirship property, estates in probate, and land held across several family members." } },
+    { "@type": "Question", "name": "Is there a minimum acreage to sell land to Maverick Energy Partners?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Typically 20 acres or more, though smaller tracts can matter if they sit next to a larger assemblage already under evaluation." } },
+    { "@type": "Question", "name": "Do you pay cash for land in Texas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, closings are cash, and there is no cost or obligation to have your land screened." } }
+  ]
+}
+</script>
+
+</body>
+</html>
