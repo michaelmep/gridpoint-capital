@@ -1241,6 +1241,8 @@ html.js .fade-in.is-visible { opacity: 1; transform: none; }
 .form-note { font-size: 13px; color: var(--fg-mute); }
 .field-hint { font-size: 12.5px; line-height: 1.5; color: var(--fg-mute); margin-top: -2px; }
 .form-status { font-size: 14px; color: var(--navy); display: none; }
+.section-inverse .statement em { color: var(--navy-200); }
+.footer-brand img { align-self: flex-start; }
 /* mobile nav */
 .nav-toggle { display: none; margin-left: auto; background: none; border: 1px solid var(--rule-strong); border-radius: 4px; padding: 8px 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--fg); cursor: pointer; }
 @media (max-width: 900px) {
